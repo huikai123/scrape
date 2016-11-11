@@ -57,15 +57,15 @@ app.get('/scrape', function(req, res) {
   	// then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
     // now, we grab every h2 within an article tag, and do the following:
-    $('h2 class ="headline" p class="summary"').each(function(i, element) {
+    $('div.story-body').each(function(i, element) {
 
     		// save an empty result object
 				var result = {};
 
 				// add the text and href of every link, 
 				// and save them as properties of the result obj
-				result.headline = $(this).children('a').text();
-				result.summary = $(this).children('a').text();
+				result.headline = $(this).children('h2').text();
+				result.summary = $(this).children('p.summary').text();
 
 				// using our Article model, create a new entry.
 				// Notice the (result):
