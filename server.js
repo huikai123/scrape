@@ -64,7 +64,7 @@ app.get('/scrape', function(req, res) {
 
 				// add the text and href of every link, 
 				// and save them as properties of the result obj
-				result.headline = $(this).children('h2').text();
+				result.headline = $(this).children('h2.headline').text();
 				result.summary = $(this).children('p.summary').text();
 
 				// using our Article model, create a new entry.

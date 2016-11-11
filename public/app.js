@@ -4,10 +4,8 @@ $.getJSON('/articles', function(data) {
   for (var i = 0; i<data.length; i++){
     // display the apropos information on the page
     //$('#articles').append('<p data-id="' + data[i]._id + '">'+ data[i].headline + '<br />'+ data[i].summary + '</p>');
-      $('.panel-title1').append('<p data-id="' + data[i]._id + '">'+ data[i].headline);
-      $('.panel-body1').append(data[i].summary + '</p>');
-      $('.panel-title2').append('<p data-id="' + data[i]._id + '">'+ data[i].headline);
-      $('.panel-body2').append(data[i].summary + '</p>');
+      $('.panel-title').append('<p data-id="' + data[i]._id + '">'+ data[i].headline);
+      $('.panel-body').append(data[i].summary + '</p>');
   }
 });
 
